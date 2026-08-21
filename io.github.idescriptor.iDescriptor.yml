@@ -7,7 +7,7 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
   - org.freedesktop.Sdk.Extension.llvm22
 
-command: iDescriptor
+command: idescriptor
 
 finish-args:
   # we absolutely need x11, GstGLQt6VideoItem doesn't work with wayland (used in AirPlay)
@@ -107,7 +107,7 @@ modules:
         RUST_BACKTRACE: "1"
     build-commands:
       - cargo build --offline --locked --release --features flatpak
-      - install -Dm0755 target/release/idescriptor ${FLATPAK_DEST}/bin/iDescriptor
+      - install -Dm0755 target/release/idescriptor ${FLATPAK_DEST}/bin/idescriptor
       # - install -Dm0755 packaging/linux/flatpak/idescriptor-fusermount3 ${FLATPAK_DEST}/bin/idescriptor-fusermount3
       - install -Dm0644 io.github.idescriptor.iDescriptor.desktop ${FLATPAK_DEST}/share/applications/io.github.idescriptor.iDescriptor.desktop
       - install -Dm0644 io.github.idescriptor.iDescriptor.metainfo.xml ${FLATPAK_DEST}/share/metainfo/io.github.idescriptor.iDescriptor.metainfo.xml
@@ -118,7 +118,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/iDescriptor/iDescriptor.git
-        tag: v0.6.1
-        commit: f4d1c1bccf7c4b45244023a4d293018b19dd768c
+        tag: v0.6.2
+        commit: 28118cc055ab998f05c62f4df1b1bbff9402d2e1
 
       - cargo-sources.json
